@@ -11,10 +11,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.22.10",
     "@types/node": "^20.5.7",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "eslint": "^8.48.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "bencode": "^4.0.0"
   }
 }

@@ -1,4 +1,6 @@
 import fs from "fs";
+import bencode from "bencode";
 
-const torrent = fs.readFileSync("puppy.torrent", "utf8");
-console.log(torrent);
+const torrent = bencode.decode(fs.readFileSync("puppy.torrent"));
+const trackerUrl = torrent.announce.toString("utf8");
+console.log(trackerUrl);
