@@ -1,6 +1,11 @@
+import parseTorrent from "parse-torrent";
 import fs from "fs";
-import bencode from "bencode";
 
-const torrent = bencode.decode(fs.readFileSync("puppy.torrent"));
-const trackerUrl = torrent.announce.toString("utf8");
-console.log(trackerUrl);
+const torrentFilePath = "puppy.torrent";
+const torrentFileContent = fs.readFileSync(torrentFilePath);
+
+const torrentInfo = parseTorrent(torrentFileContent);
+
+torrentInfo.then((res) => {
+  console.log("Announce URL:", res.announce);
+});
